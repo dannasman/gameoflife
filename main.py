@@ -34,9 +34,13 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     move = not move
+
             if event.type == pygame.MOUSEBUTTONUP:
                 pos = pygame.mouse.get_pos()
-                grid.activate_cell(pos[0]//10, pos[1]//10)
+                if grid.get_value(pos[0]//10, pos[1]//10) == 1:
+                    grid.deactivate_cell(pos[0]//10, pos[1]//10)
+                else:
+                    grid.activate_cell(pos[0] // 10, pos[1] // 10)
 
             if event.type == time:
                 for x in range(window_width//10):
