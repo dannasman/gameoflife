@@ -51,7 +51,7 @@ def main():
                             window.fill([0, 0, 0], ((x * 10, y * 10), (10, 10)))
                 if move:
                     grid.simulate()
-                pygame.display.flip()
+            pygame.display.flip()
 
 
         

@@ -7,9 +7,11 @@ class Cell:
         
     def set_alive(self):
         self.isalive = 1
+        self.next_state = 0
         
     def set_dead(self):
         self.isalive = 0
+        self.next_state = 0
         
 class Grid:
     def __init__(self, width, height, max_generations):
