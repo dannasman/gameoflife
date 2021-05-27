@@ -67,12 +67,13 @@ class Grid:
         for x in range(self.width):
             for y in range(self.height):
                 self.grid[x][y].isalive = self.grid[x][y].next_state
+
+    def transition_one(self, x, y):
+        self.grid[x][y].isalive = self.grid[x][y].next_state
                 
     def simulate(self):
-        for i in range(self.max_generations):
-            print(self)
-            self.compute_next_state()
-            self.transition()
+        self.compute_next_state()
+        self.transition()
         
     def __str__(self):
         string = ""
@@ -81,7 +82,7 @@ class Grid:
                 string += str(self.grid[x][y].isalive) + " "
             string += "\n"
         return string
-        
-    
-        
+
+    def get_value(self, x, y):
+        return self.grid[x][y].isalive
     
